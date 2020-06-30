@@ -10,14 +10,54 @@
             $this->connection = $db->getConnection();
         }
 
-        function create($tableName,$insertWhat){}
+        function create($table,$data)
+        {
+            $fields = $values = array();
 
-        function read($tableName,$args,$whereArgs){}
+            foreach ($data as $key => $val)
+            {
+                $fields[] = "`".$key."`";
+                $values[] = "\"".$val."\"";
+            }
 
-        function update($tableName,$whatToSet,$whereArgs){}
+            $sql = $this->_insert($table, $fields, $values);
 
-        function delete($tableName,$whereArgs){}
+            if ($this->connection->query($sql) === TRUE)
+                return true;
+            else return false;
+            
+        }
 
-        function where($sql,$whereArgs){}
+        protected function _insert($table, $keys, $values)
+        {
+            return 'INSERT INTO '.$table.' ('.implode(', ', $keys).') VALUES ('.implode(', ', $values).')';
+        }
+
+        function readAll($tableName)
+        {
+            $sql = "SELECT * FROM ".$tableName;
+            $result = mysqli_query($this->connection, $sql);
+
+            if (mysqli_num_rows($result) > 0) 
+            {
+                $i=0;
+                while($row = mysqli_fetch_assoc($result)) 
+                {
+                    $out[$i++] = $row;
+                }
+                return $out;
+            } 
+            else 
+            {
+                return NULL;
+            }
+
+        }
+
+        //function update($tableName,$whatToSet,$whereArgs){}
+
+        //function delete($tableName,$whereArgs){}
+
+        //function where($sql,$whereArgs){}
     }
 ?>

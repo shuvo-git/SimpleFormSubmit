@@ -3,7 +3,7 @@
         'host'=>'localhost',
         'username'=>'root',
         'password'=>'',
-        'dbname'=>'wordpress'
+        'dbname'=>'simple_form'
 
     )
 ?>

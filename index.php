@@ -3,6 +3,7 @@
 $uri = parse_url($_SERVER['REQUEST_URI']);
 
 require('./controller/Home.php');
+require('./controller/Details.php');
 
 
 

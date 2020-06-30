@@ -8,12 +8,18 @@ class M_model extends J_Model
     function __construct()
     {
         parent::__construct();
+        $this->tableName = '`order`';
     }
 
-    function sayHello($name)
+    function createOrder($data)
     {
-		echo "Welcome to  ". $name;
-	}
+        return $this->create($this->tableName,$data);
+    }
+
+    function getAllOrder()
+    {
+        return $this->readAll($this->tableName);
+    }
 
 }
 

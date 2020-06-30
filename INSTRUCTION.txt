@@ -1,0 +1,11 @@
+The Application Has a config folder.
+config----
+         |----database.php
+         |----config.php
+
+1.  In database.php, database host,username,password, and dabasename currently 'simple_form' can be edited.
+2.  A database name currently 'simple_form' should be created. u can use any other name but must edit the database.php conf file and add that name.
+3.  A file named 'simple_form.sql' in the root directory should be run on the database to create table named "order"
+4.  in config.php file base_url should be the application folder which should be kept in 'htdocs' or 'www' folder
+5.  after all set 
+	visit this link : "http://localhost/SimpleFormSubmit/index.php/Home/index"
