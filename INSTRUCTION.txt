@@ -1,3 +1,6 @@
+-----------
+INSTRUCTION:
+````````````
 The Application Has a config folder.
 config----
          |----database.php
@@ -9,3 +12,30 @@ config----
 4.  in config.php file base_url should be the application folder which should be kept in 'htdocs' or 'www' folder
 5.  after all set 
 	visit this link : "http://localhost/SimpleFormSubmit/index.php/Home/index"
+
+
+
+------------
+DESCRIPTION:
+````````````
+1. I have made a simple MVC like frameork to pass the URL on a valid link Class and Method.
+2. There is a Core controller and model class .
+3. Application controller are in controller folder. There is 2 controller
+	- Home
+	- Details
+4. Only one model on model folder named:
+	- M_model
+5. in view folder , there are 2 view item:
+	- home
+	- details
+6. In /core/J_Model.php file , 2 public methods and 1 protected method implemented:
+	(public) 
+	- create()
+	- readAll()
+7. In /core/J_Controller.php method for loading a view is implemented
+8. Most importantly, in index.php file , All routing functionality is implemented.
+
+9. Rest of the things of the project are followed as per requirement 
+10. In Home page, An unauthenticated buyer can place an order. He/she can not be able to place the order again within 5 min, As cookie set for 5 	    min. It is intentionally kept 5 mins for testing purpose , instead of 24 hours.
+11. All the request are handled using AJAX and Server side and client side validation has implemented.
+12. on Order List page, The list of all order has shown.
